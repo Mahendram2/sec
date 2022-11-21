@@ -1,8 +1,7 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
 import QuestionCard from "./QuestionCard"
 import QuizQuestion from "../QuizQuestions.json"
-import { useNavigate, Redirect,Route, Navigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Game = () => {
@@ -37,7 +36,7 @@ const Game = () => {
   },[questions])
 
   useEffect(()=>{
-    if(questionNumber == questions.length && questions.length > 0){
+    if(questionNumber === questions.length && questions.length > 0){
       console.log("put in winning factor here")
       console.log(waterLevel)
       navigate('/Win/'+total)
